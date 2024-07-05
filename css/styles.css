@@ -1,0 +1,202 @@
+* { 
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --btn-color: #333;
+  --btn-hover: color-mix(in oklab, var(--btn-color), black 10%);
+  --btn-active: color-mix(in oklab, var(--btn-color), black 20%);
+
+  --fn-color: #555;
+  --fn-hover: color-mix(in oklab, var(--fn-color), black 10%);
+  --fn-active: color-mix(in oklab, var(--fn-color), black 20%);
+
+  --operation-color: #005db2;
+  --operation-hover: color-mix(in oklab, var(--operation-color), black 10%);
+  --operation-active: color-mix(in oklab, var(--operation-color), black 20%);
+
+  --equal-color: #1991ff;
+  --equal-hover: color-mix(in oklab, var(--equal-color), black 10%);
+  --equal-active: color-mix(in oklab, var(--equal-color), black 20%);
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.back {
+  align-content: center;
+  background-color: #1991ff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+
+.back .gradient-1 {
+  background: linear-gradient(0deg, rgba(64, 59, 135, 1) 0%, rgba(118, 118, 236, 1) 33%, rgba(60, 222, 255, 1) 100%);
+  height: 100vh;
+  left: -200%;
+  opacity: 0.5;
+  position: fixed;
+  top: 35%;
+  transition: transform 1s ease-in-out;
+  width: 400%;
+}
+
+.back .gradient-2 {
+  background: linear-gradient(180deg, rgba(64, 59, 135, 1) 0%, rgba(118, 118, 236, 1) 33%, rgba(60, 222, 255, 1) 100%);
+  height: 100vh;
+  left: -200%;
+  opacity: 0.5;
+  position: fixed;
+  top: 35%;
+  transition: transform 1s ease-in-out;
+  width: 400%;
+}
+
+.back .gradient-3 {
+  background: linear-gradient(90deg, rgba(64, 59, 135, 1) 0%, rgba(118, 118, 236, 1) 33%, rgba(60, 222, 255, 1) 100%);
+  height: 100vh;
+  left: -200%;
+  opacity: 0.5;
+  position: fixed;
+  top: 35%;
+  transition: transform 1s ease-in-out;
+  width: 400%;
+}
+
+main {
+  background-color: rgb(2, 26, 43);
+  border-radius: 16px;
+  color: white;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 36px 12px 12px;
+}
+
+.data, .result {
+  grid-column: 1/5;
+}
+
+.data {
+  align-items: center;
+  display: flex;
+  font-size: 2rem;
+  font-weight: 500;
+  gap: 2px;
+  justify-content: end;
+  overflow: hidden;
+  text-wrap: wrap;
+}
+
+.data i {
+  bottom: 6px;
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 0 2px;
+  position: relative;
+  text-align: center;
+}
+
+.data div:nth-child(2n) {
+  color: #1991ff;
+}
+
+.result {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  min-height: 1rem;
+  padding: 0px 4px;
+  text-align: right;
+}
+
+.btn {
+  align-content: center;
+  background-color: var(--btn-color);
+  border-radius: 12px;
+  border: 2px solid var(--btn-color);
+  color: #4cb4e4;
+  cursor: pointer;
+  display: block;
+  padding: 12px 12px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+  color: #95ddff;
+}
+
+.btn:active {
+  background-color: var(--btn-active);
+  color: white;
+}
+
+.btn.fn {
+  background-color: var(--fn-color);
+  border: 2px solid var(--fn-color);
+  font-weight: 500;
+}
+
+.btn.fn:hover {
+  background-color: var(--fn-hover);
+}
+
+.btn.fn:active {
+  background-color: var(--fn-active);
+}
+
+.btn.operation {
+  background-color: var(--operation-color);
+  border: 2px solid var(--operation-color);
+}
+
+.btn.operation:hover {
+  background-color: var(--operation-hover);
+}
+
+.btn.operation:active,
+.btn.operation.active {
+  background-color: var(--operation-active);
+}
+
+.btn.equal {
+  background-color: var(--equal-color);
+  border: 2px solid var(--equal-color);
+  color: white;
+  grid-column: 3/5;
+}
+
+.btn.equal:hover {
+  background-color: var(--equal-hover);
+}
+
+.btn.equal:active {
+  background-color: var(--equal-active);
+}
+
+.btn.sum {
+  grid-column: 4/5;
+  grid-row: 5/7;
+}
+
+footer {
+  bottom: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  padding: 4px;
+  position: fixed;
+}

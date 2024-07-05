@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso UX / Calculadora !!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="/js/main.js" type="module"></script>
+  </head>
+  <body id="app">
+      <main>
+          <div class="data">
+            <div>{{numero1}}</div>
+            <div><i :class="sign"></i></div>
+            <div>{{numero2}}</div>
+          </div>
+          <div class="result">{{resultaFormateado}}</div>
+          <button class="btn fn" @click="ac()">AC</button>
+          <button class="btn fn" @click="del()"><i class="fa-solid fa-angle-left"></i></button>
+          <button class="btn operation" @click="operation('/')" :class="op =='/' ? 'active' : ''"><i class="fa-solid fa-dividefa-solid fa-divide"></i></button>
+          <button class="btn operation" @click="operation('x')" :class="op =='x' ? 'active' : ''"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn number" @click="number(7)">7</button>
+          <button class="btn number" @click="number(8)">8</button>
+          <button class="btn number" @click="number(9)">9</button>
+          <button class="btn operation" @click="operation('-')" :class="op =='-' ? 'active' : ''"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn number" @click="number(4)">4</button>
+          <button class="btn number" @click="number(5)">5</button>
+          <button class="btn number" @click="number(6)">6</button>
+          <button class="btn operation sum" @click="operation('+')" :class="op =='+' ? 'active' : ''"><i class="fa-solid fa-plus"></i></button>
+          <button class="btn number" @click="number(1)">1</button>
+          <button class="btn number" @click="number(2)">2</button>
+          <button class="btn number" @click="number(3)">3</button>
+          <button class="btn number" @click="number(0)">0</button>
+          <button class="btn number" @click="dot()">,</button>
+          <button class="btn operation equal" @click="equal()"><i class="fa-solid fa-equals"></i></button>
+      </main>
+      <footer>
+        Curso UX / Cymetria - John Valencia 2024
+      </footer>
+      <div class="back">
+        <div class="gradient-1" :style="{transform: 'rotate(' + angulo1 + 'deg)'}"></div>
+        <div class="gradient-2" :style="{transform: 'rotate(' + angulo2 + 'deg)'}"></div>
+        <div class="gradient-3" :style="{transform: 'rotate(' + angulo3 + 'deg)'}"></div>
+      </div>
+  </body>
+</html>
